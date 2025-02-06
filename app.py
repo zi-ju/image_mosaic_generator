@@ -6,12 +6,12 @@ from src.mosaic_generator import apply_mosaic
 from src.similarity_metrics import calculate_similarity
 
 
-def generate_mosaic(input_image, grid_size):
+def generate_mosaic(input_image, grid_count):
     # Resize image and apply color quantization
     quantized_image = preprocess_image(input_image, max_dim=512, k_colors=8)
 
     # Divide image into grid
-    grid, cell_h, cell_w = divide_into_grid(quantized_image, grid_size)
+    grid, cell_h, cell_w = divide_into_grid(quantized_image, grid_count)
 
     # Generate mosaic
     mosaic = apply_mosaic(grid, cell_h, cell_w)
@@ -28,7 +28,7 @@ demo = gr.Interface(
     fn=generate_mosaic,
     inputs=[
         gr.Image(label="Original Image"),
-        gr.Slider(2, 100, value=16, step=1, label="Grid Size")],
+        gr.Slider(2, 100, value=16, step=1, label="Grid number on width")],
     outputs=[
         gr.Image(label="Mosaic Image"),  # Mosaic image
         gr.Textbox(label="Similarity")  # Similarity metrics

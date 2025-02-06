@@ -2,14 +2,14 @@ import numpy as np
 
 
 # Divide the image into grid and extracts average colors
-def divide_into_grid(image, grid_size):
+def divide_into_grid(image, grid_count_w):
     h, w, _ = image.shape
 
     # Compute the best cell size that evenly divides the image
-    cell_h = h // grid_size
-    cell_w = w // grid_size
+    cell_h = h // grid_count_w
+    cell_w = w // grid_count_w
 
-    # Recalculate grid size to fit the image exactly
+    # Recalculate grid number to fit the image exactly
     grid_rows = h // cell_h
     grid_cols = w // cell_w
 

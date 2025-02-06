@@ -8,13 +8,13 @@ from src.similarity_metrics import calculate_similarity
 
 def generate_mosaic(input_image, grid_size):
     # Resize image and apply color quantization
-    quantized_image = preprocess_image(input_image, resize_dim=(512, 512), k_colors=8)
+    quantized_image = preprocess_image(input_image, max_dim=512, k_colors=8)
 
     # Divide image into grid
-    grid = divide_into_grid(quantized_image, grid_size)
+    grid, cell_h, cell_w = divide_into_grid(quantized_image, grid_size)
 
     # Generate mosaic
-    mosaic = apply_mosaic(grid)
+    mosaic = apply_mosaic(grid, cell_h, cell_w)
 
     # Calculate similarity metrics
     ssim_score, similarity_percentage, interpretation = calculate_similarity(input_image, mosaic)

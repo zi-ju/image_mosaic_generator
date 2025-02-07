@@ -3,11 +3,8 @@ import numpy as np
 from sklearn.cluster import KMeans
 
 
-MAX_DIM = 512
-
-
 # Resize if needed and apply color quantization
-def preprocess_image(image, max_dim=MAX_DIM, k_colors=8):
+def preprocess_image(image, max_dim, k_colors=8):
     # Convert to OpenCV format
     image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 

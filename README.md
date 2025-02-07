@@ -1,4 +1,14 @@
+---
+title: Interactive_Image_Mosaic_Generator
+app_file: app.py
+sdk: gradio
+sdk_version: 4.44.1
+---
 # Interactive Image Mosaic Generator
+
+## App Link
+https://huggingface.co/spaces/zoeyziz/Interactive_Image_Mosaic_Generator
+
 
 ## Overview
 This project is an interactive web application that allows users to generate a mosaic representation of an image using either color blocks or small image tiles. The application is built with Python, OpenCV, NumPy, and Gradio for the user interface.

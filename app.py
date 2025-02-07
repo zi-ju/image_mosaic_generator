@@ -27,9 +27,9 @@ def generate_mosaic(input_image, grid_count, mosaic_type):
         mosaic = apply_mosaic_with_tiles(grid, tile_images, tile_image_colors, tile_h, tile_w, uniqueness_threshold=UNIQUENESS_THRESHOLD)
 
     # Calculate similarity metrics
-    ssim_score, similarity_percentage, interpretation = calculate_similarity(input_image, mosaic)
+    mse_score, ssim_score, similarity_percentage, interpretation = calculate_similarity(input_image, mosaic)
 
-    similarity_output = f"SSIM: {ssim_score:.2f} \nSimilarity: {similarity_percentage:.2f}% - {interpretation}"
+    similarity_output = f"MSE: {mse_score:.2f} \nSSIM: {ssim_score:.2f} \nSimilarity: {interpretation}"
 
     return Image.fromarray(mosaic), similarity_output
 

@@ -56,7 +56,7 @@ Once the application starts, a Gradio interface will launch in your browser.
 3. **Mosaic Generation**:
    - If "Color Blocks" is selected, each cell is filled with the average color.
    - If "Image Tiles" is selected, tiles are matched to the grid using color similarity.
-4. **Similarity Metrics**: Structural Similarity Index (SSIM) is computed to measure how closely the mosaic resembles the original image.
+4. **Similarity Metrics**: Mean Squared Error (MSE) and Structural Similarity Index (SSIM) are computed to measure how closely the mosaic resembles the original image.
 
 
 ## Future Improvements
